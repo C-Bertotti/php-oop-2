@@ -48,9 +48,20 @@ var_dump($prodotti);
 </head>
 <body>
     <h1>Lista prodotti e-commerce</h1>
-    <h2><?php echo "Prodotti per la " .$categories['arredamento']['cucina']?></h2>
+    <h2><?php echo $categories['arredamento']['cucina']?></h2>
     <ul>
-        <li><?php  ?></li>
+        <?php foreach($prodotti as $prodotto) {
+            if($prodotto->getCategoria() == $categories['arredamento']['cucina']) { ?>
+                <li><?php echo $prodotto->getNome(); ?></li>
+        <?php } }?>
+    </ul>
+
+    <h2><?php echo $categories['utensili']['cucina']?></h2>
+    <ul>
+        <?php foreach($prodotti as $prodotto) {
+            if($prodotto->getCategoria() == $categories['utensili']['cucina']) { ?>
+                <li><?php echo $prodotto->getNome(); ?></li>
+        <?php } }?>
     </ul>
     
 </body>

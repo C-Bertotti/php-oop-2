@@ -15,6 +15,12 @@ class Prodotto {
         $this->descrizione = $_descrizione;
         $this->codice = $_codice;
     }
+
+    //metodi
+    public function getNome()
+    {
+        return $this->nome;
+    }
 }
 
 class Prodotto_Categoria extends Prodotto {
@@ -26,6 +32,12 @@ class Prodotto_Categoria extends Prodotto {
         parent:: __construct($_prezzo, $_nome, $_descrizione, $_codice);
         $this->categoria = $_categoria;
 
+    }
+
+    //metodi
+    public function getCategoria()
+    {
+        return $this->categoria;
     }
 
 }
